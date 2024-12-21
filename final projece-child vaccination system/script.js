@@ -47,3 +47,13 @@ sliderContainer.addEventListener('mouseout', () => {
     autoSlideInterval = setInterval(slideRight, 3000);
 });
 
+// Get references to input and suggestions
+const questionInput = document.getElementById('question-input');
+const suggestions = document.querySelectorAll('.suggestion');
+
+// Add click event listeners to each suggestion
+suggestions.forEach((suggestion) => {
+    suggestion.addEventListener('click', () => {
+        questionInput.value = suggestion.textContent; // Set input field value to suggestion text
+    });
+});
